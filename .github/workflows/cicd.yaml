@@ -1,0 +1,46 @@
+name: CI/CD - Deploy to Hugging Face
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ develop ]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    env:
+      SPACE_ID: "ci_test_mode"
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install pytest pytest-cov
+
+      - name: Run tests with coverage
+        run: |
+          PYTHONPATH=. pytest --cov=src --cov=app --cov-report=term-missing
+
+      - name: Unshallow fetch (for full commit history)
+        run: git fetch --unshallow
+
+      - name: Deploy to Hugging Face Spaces
+        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' && success() }}
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |
+          git config --global user.email "ci@github.com"
+          git config --global user.name "github-actions"
+          git remote add space https://user:$HF_TOKEN@huggingface.co/spaces/FlorianSC/FlorianSC/Deploiement_modele_machine_learning
+          git push space main --force

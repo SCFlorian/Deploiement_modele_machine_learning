@@ -1,0 +1,25 @@
+# API
+fastapi
+uvicorn
+
+# Machine Learning
+scikit-learn==1.7.1
+catboost
+joblib
+numpy
+pandas
+scipy
+gradio==5.49.0
+
+# Base de données
+sqlalchemy
+psycopg2-binary
+
+# Tests
+pytest
+pytest-cov
+httpx
+
+# Divers (utile pour la suite)
+python-dotenv
+requests

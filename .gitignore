@@ -1,2 +1,2 @@
 # Code à sécuriser
-.env
+.env.DS_Store

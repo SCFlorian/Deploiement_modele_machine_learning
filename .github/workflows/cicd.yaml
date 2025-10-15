@@ -42,5 +42,5 @@ jobs:
         run: |
           git config --global user.email "ci@github.com"
           git config --global user.name "github-actions"
-          git remote add space https://user:$HF_TOKEN@huggingface.co/spaces/FlorianSC/FlorianSC/Deploiement_modele_machine_learning
+          git remote add space https://user:$HF_TOKEN@huggingface.co/spaces/FlorianSC/Deploiement_modele_machine_learning
           git push space main --force

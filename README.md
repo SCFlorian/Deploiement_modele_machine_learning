@@ -22,16 +22,11 @@ L’objectif :
 
 ## Organisation Gitflow
 
-Le projet suit la méthodologie **Gitflow** avec une **Pull Request** :
-1. **feature/** → chaque nouvelle fonctionnalité est développée sur une branche dédiée 
-
-2. **Fusion vers develop** : Cette étape fusionne automatiquement la branche feature dans develop
-
-3. **Pull Request** : Une PR manuelle est ensuite ouverte sur GitHub depuis develop vers main
-
-4. **release/vX.X.X** → stabilisation avant production  
-
-5. **main** → contient uniquement le code validé et prêt à être déployé. Chaque merge vers main déclenche automatiquement un déploiement sur Hugging Face Spaces.
+Le projet suit le workflow **Gitflow** avec **Pull Requests** :
+- `feature/*` → développement d’une fonctionnalité
+- `develop` → intégration et tests
+- `release/vX.X.X` → stabilisation
+- `main` → production, déploiée automatiquement sur Hugging Face Spaces
 
 ---
 
@@ -110,13 +105,6 @@ Deux modes selon l’environnement :
 - **Local avec PostreSQl** : connexion via DATABASE_URL dans .env
 - **Hugging Face ave SQLite** temporaire : stockée dans /tmp/hf_temp.db car Hugging Face ne permet pas PostgreSQL
 
-Tables créées par SQLAlchemy :
-- employee_inputs : données brutes
-- features : données prêtes pour la prédiction
-- prediction_results : résultats du modèle
-- requests : journalisation des requêtes API
-- api_responses : réponses envoyées à l’utilisateur
-
 Diagramme UML de la base :
 
 <img width="788" height="644" alt="diagramme-UML" src="https://github.com/user-attachments/assets/a0fdf6ca-6ada-4c14-aefd-7de30ce31ace" />
@@ -153,3 +141,9 @@ Résultats des tests :
 - Release : stabilisation et tagging (ex. v1.0.0, v1.1.0)
 - Production : branche main, déployée automatiquement sur Hugging Face Spaces
 - Fusion vers main uniquement via Pull Request validée
+
+## Documentation technique complète
+Une documentation détaillée du projet (API, modèle, CI/CD, base de données) est disponible via **MkDocs** :
+```bash
+mkdocs serve
+```

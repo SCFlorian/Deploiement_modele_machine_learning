@@ -22,22 +22,16 @@ L’objectif :
 
 ## Organisation Gitflow
 
-Le cycle de vie du projet suit strictement le workflow **Gitflow** :  
+Le projet suit la méthodologie **Gitflow** avec une **Pull Request** :
+1. **feature/** → chaque nouvelle fonctionnalité est développée sur une branche dédiée 
 
-1. **Feature branches** : développement d’une nouvelle fonctionnalité.  
-   - `feature/feature-engineering` : traitement des données brutes pour générer des données nettoyées.  
+2. **Fusion vers develop** : Cette étape fusionne automatiquement la branche feature dans develop
 
-2. **Develop** : intègre les fonctionnalités terminées.  
+3. **Pull Request** : Une PR manuelle est ensuite ouverte sur GitHub depuis develop vers main
 
-3. **Release** : stabilisation avant passage en production. Un **tag de version** est créé (ex : `v1.0.0`).  
+4. **release/vX.X.X** → stabilisation avant production  
 
-4. **Main** : branche de production, déployée automatiquement sur Hugging Face Spaces.  
-
-**Exemple de cycle :**  
-- Création de `feature/feature-engineering` → merge dans `develop`
-- Merge de `develop` → `release/v1.0.0` avec création du tag
-- Merge de `release/v1.0.0` → `main`
-- Même logique ensuite pour `feature/feature-prediction`
+5. **main** → contient uniquement le code validé et prêt à être déployé. Chaque merge vers main déclenche automatiquement un déploiement sur Hugging Face Spaces.
 
 ---
 
@@ -60,11 +54,28 @@ source .venv/bin/activate    # Mac / Linux
 ```bash
 pip install -r requirements.txt
 ```
+
+### 4. Lancer l'application en local
+```bash
+python app.py
+```
+
+#### Ouvrir le navigateur à l'adresse 
+- http://127.0.0.1:7860
+- Interface : Gradio
+- Documentation API : http://127.0.0.1:7860/docs
+- Vérification de santé : http://127.0.0.1:7860/health
+
+### 5. En ligne avec Hugging Face Spaces
+Accessible via ce lien :
+
+https://FlorianSC–Deploiement_modele_machine_learning.hf.space
+
 ---
 
 ## Organisation du projet
 ```
-deployez_modele_ml/
+Deploiement_modele_machine_learning/
  ├── .github/workflows/      # Configuration du pipeline CI/CD
  ├── data/                   # Échantillon du jeu de données de test
  ├── database/               # Création et gestion des bases (PostgreSQL / SQLite)

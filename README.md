@@ -26,7 +26,6 @@ Le cycle de vie du projet suit strictement le workflow **Gitflow** :
 
 1. **Feature branches** : développement d’une nouvelle fonctionnalité.  
    - `feature/feature-engineering` : traitement des données brutes pour générer des données nettoyées.  
-   - `feature/feature-prediction` : utilisation des données nettoyées pour générer des prédictions.  
 
 2. **Develop** : intègre les fonctionnalités terminées.  
 

@@ -66,7 +66,6 @@ pip install -r requirements.txt
 ```
 deployez_modele_ml/
  ├── .github/workflows/      # Configuration du pipeline CI/CD
- ├── assets/                 # Captures d’écran & schémas (tests, UML, etc.)
  ├── data/                   # Échantillon du jeu de données de test
  ├── database/               # Création et gestion des bases (PostgreSQL / SQLite)
  ├── models/                 # Modèle sauvegardé (model.pkl)

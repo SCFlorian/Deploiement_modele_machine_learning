@@ -5,7 +5,6 @@
 - Bien commenter le code et ajouter des docstrings simples pour les fonctions.
 
 ## Organisation Gitflow
-
 Le cycle de vie du projet suit strictement le workflow **Gitflow** :  
 
 1. **Feature branches** : développement d’une nouvelle fonctionnalité.  
@@ -18,10 +17,15 @@ Le cycle de vie du projet suit strictement le workflow **Gitflow** :
 4. **Main** : branche de production, déployée automatiquement sur Hugging Face Spaces.  
 
 **Exemple de cycle :**  
-- Création de `feature/feature-engineering` → merge dans `develop`
-- Merge de `develop` → `release/v1.0.0` avec création du tag
-- Merge de `release/v1.0.0` → `main`
-- Même logique ensuite pour `feature/feature-prediction`
+- **feature/** → Développement d’une nouvelle fonctionnalité  
+    - ex. `feature/add_dockerfile`
+- **develop** → Intègre toutes les fonctionnalités terminées et testées.
+- **Pull Request** → Une PR est ouverte de `develop` vers `main`  
+   - La CI s’exécute automatiquement (tests + validation)
+   - Le merge n’est possible que si la CI passe avec succès
+- **release/vX.X.X** → Stabilisation avant production et création du tag de version.  
+    - ex. `v3.2.0`
+- **main** → Branche de production, déployée automatiquement sur **Hugging Face Spaces**.
 
 ---
 
@@ -31,10 +35,14 @@ Le cycle de vie du projet suit strictement le workflow **Gitflow** :
     - On fait un push sur main,
     - Ou une pull request vers main.
 
+---
+
 ## Étapes du pipeline :
 	1.	Installer Python et les dépendances.
 	2.	Lancer les tests (dans tests/).
 	3.	Déployer sur Hugging Face Spaces si les tests passent.
+
+---
 
 ## Tests
 - Les tests se trouvent dans tests/.

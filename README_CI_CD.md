@@ -7,14 +7,10 @@
 ## Organisation Gitflow
 Le cycle de vie du projet suit strictement le workflow **Gitflow** :  
 
-1. **Feature branches** : développement d’une nouvelle fonctionnalité.  
-   - `feature/feature-engineering` : traitement des données brutes pour générer des données nettoyées.  
-
-2. **Develop** : intègre les fonctionnalités terminées.  
-
-3. **Release** : stabilisation avant passage en production. Un **tag de version** est créé (ex : `v1.0.0`).  
-
-4. **Main** : branche de production, déployée automatiquement sur Hugging Face Spaces.  
+1. **Feature branches**  
+2. **Develop**
+3. **Release**
+4. **Main**
 
 **Exemple de cycle :**  
 - **feature/** → Développement d’une nouvelle fonctionnalité  

@@ -110,8 +110,7 @@ Deux modes selon l’environnement :
 
 Diagramme UML de la base :
 
-<img width="788" height="644" alt="diagramme-UML" src="https://github.com/user-attachments/assets/a0fdf6ca-6ada-4c14-aefd-7de30ce31ace" />
-
+<img width="788" height="644" alt="diagramme-UML" src="https://github.com/user-attachments/assets/f5bafc64-c301-4f7e-b30c-7e48c5b57575" />
 
 ---
 
@@ -123,12 +122,12 @@ Les tests sont réalisés avec **Pytest** et **Pytest-Cov**, couvrant :
 
 Résultats des tests :
 - Pytest :
-
-<img width="564" height="111" alt="pytest" src="https://github.com/user-attachments/assets/277c495e-7376-4562-b845-50b591c57ef6" />
+  
+<img width="564" height="111" alt="pytest" src="https://github.com/user-attachments/assets/f241bf7f-de9c-431e-b61d-b095cc260e25" />
 
 - Pytest-Cov :
 
-<img width="514" height="160" alt="pytest-cov" src="https://github.com/user-attachments/assets/536fcccd-6b9e-4f51-825f-c599718c95e8" />
+<img width="514" height="160" alt="pytest-cov" src="https://github.com/user-attachments/assets/8d773380-3995-43aa-9eb7-b69d761c704a" />
 
 ---
 

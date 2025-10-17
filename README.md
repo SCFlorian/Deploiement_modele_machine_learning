@@ -23,10 +23,13 @@ L’objectif :
 ## Organisation Gitflow
 
 Le projet suit le workflow **Gitflow** avec **Pull Requests** :
-- `feature/*` → développement d’une fonctionnalité
-- `develop` → intégration et tests
-- `release/vX.X.X` → stabilisation
-- `main` → production, déploiée automatiquement sur Hugging Face Spaces
+- **feature/** → développement d’une nouvelle fonctionnalité  
+- **develop** → intégration et validation des fonctionnalités terminées  
+- **Pull Request** → ouverture d’une PR depuis `develop` vers `main`  
+  - Exécution automatique de la CI/CD (tests Pytest + couverture)  
+  - Merge uniquement si les tests passent  
+- **release/vX.X.X** → stabilisation avant mise en production et création du tag de version  
+- **main** → branche de production, déployée automatiquement sur **Hugging Face Spaces**
 
 ---
 
@@ -64,7 +67,7 @@ python app.py
 ### 5. En ligne avec Hugging Face Spaces
 Accessible via ce lien :
 
-https://FlorianSC–Deploiement_modele_machine_learning.hf.space
+https://huggingface.co/spaces/FlorianSC/Deploiement_modele_machine_learning
 
 ---
 
@@ -134,13 +137,6 @@ Résultats des tests :
 - Gestion des secrets via .env
 
 ---
-
-## Gestion des environnements
-- Développement : branches feature/*
-- Test : exécution automatique des tests unitaires via GitHub Actions à chaque push
-- Release : stabilisation et tagging (ex. v1.0.0, v1.1.0)
-- Production : branche main, déployée automatiquement sur Hugging Face Spaces
-- Fusion vers main uniquement via Pull Request validée
 
 ## Documentation technique complète
 Une documentation détaillée du projet (API, modèle, CI/CD, base de données) est disponible via **MkDocs** :

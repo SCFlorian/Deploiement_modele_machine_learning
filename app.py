@@ -158,7 +158,7 @@ def predict_api(input_data: EmployeeInput):
         db.commit()
         db.refresh(new_response)
 
-        # 7On prépare les données à renvoyer avant fermeture de la session
+        # Préparation les données à renvoyer avant fermeture de la session
         prediction_data = {
             "prediction": new_result.prediction,
             "probability": new_result.probability,

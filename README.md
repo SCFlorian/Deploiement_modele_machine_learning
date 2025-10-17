@@ -105,8 +105,8 @@ Deploiement_modele_machine_learning/
 
 ## Base de données
 Deux modes selon l’environnement :
-- **Local avec PostreSQl** : connexion via DATABASE_URL dans .env
-- **Hugging Face ave SQLite** temporaire : stockée dans /tmp/hf_temp.db car Hugging Face ne permet pas PostgreSQL
+- **Local avec PostreSQL** : connexion via DATABASE_URL dans .env
+- **Hugging Face avec SQLite** temporaire : stockée dans /tmp/hf_temp.db car Hugging Face ne permet pas PostgreSQL
 
 Diagramme UML de la base :
 
